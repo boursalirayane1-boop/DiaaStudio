@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:screenOrientation="landscape">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.4" />
+
+    <!-- Background Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <!-- Top AppBar -->
+    <LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|space_between"
+        android:paddingLeft="@dimen/container_padding"
+        android:paddingRight="@dimen/container_padding"
+        android:paddingTop="@dimen/stack_sm"
+        android:paddingBottom="@dimen/stack_sm"
+        android:background="#1A000000"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="أريزون RP"
+                android:textSize="@dimen/text_display_md"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/stack_sm" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Main Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
+        android:layout_above="@+id/bottom_nav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/container_padding"
+            android:paddingRight="@dimen/container_padding"
+            android:paddingTop="@dimen/stack_md"
+            android:paddingBottom="@dimen/stack_md">
+
+            <!-- Left Side: Profile Card -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="@dimen/stack_md">
+
+                <!-- Character Avatar -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginBottom="@dimen/stack_md">
+
+                    <ImageView
+                        android:layout_width="128dp"
+                        android:layout_height="128dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/avatar_bg" />
+
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginEnd="@dimen/unit"
+                        android:layout_marginBottom="@dimen/unit"
+                        android:background="@drawable/edit_btn" />
+                </FrameLayout>
+
+                <!-- Player Name Input -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="اسم اللاعب"
+                    android:text="Xdiaa_Gaming"
+                    android:textAlignment="textEnd"
+                    android:background="@drawable/input_bg"
+                    android:padding="@dimen/stack_sm"
+                    android:layout_marginBottom="@dimen/stack_md"
+                    android:textColor="@color/on_surface"
+                    android:textColorHint="@color/on_surface_variant" />
+
+                <!-- Save Button -->
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="حفظ التغييرات"
+                    android:textColor="@color/on_primary"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_primary"
+                    android:padding="@dimen/stack_md" />
+            </LinearLayout>
+
+            <!-- Right Side: Stats Grid -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/gutter">
+
+                <!-- Stat Card 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="@dimen/stack_md"
+                    android:layout_marginBottom="@dimen/stack_md">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="وقت اللعب"
+                        android:textSize="@dimen/text_label_mono"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginBottom="@dimen/unit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,240 ساعة"
+                        android:textSize="@dimen/text_headline_lg"
+                        android:textColor="@color/on_surface"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Stat Card 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="@dimen/stack_md"
+                    android:layout_marginBottom="@dimen/stack_md">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الإنجازات"
+                        android:textSize="@dimen/text_label_mono"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginBottom="@dimen/unit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="85/100"
+                        android:textSize="@dimen/text_headline_lg"
+                        android:textColor="@color/on_surface"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Progress Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="@dimen/stack_md"
+                    android:layout_marginBottom="@dimen/stack_md">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="التقدم الحالي (Rank 42)"
+                        android:textSize="@dimen/text_label_mono"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginBottom="@dimen/unit" />
+
+                    <ProgressBar
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:max="100"
+                        android:progress="75"
+                        android:progressDrawable="@drawable/progress_bar"
+                        android:layout_marginBottom="@dimen/unit" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="75%"
+                        android:textSize="@dimen/text_body_md"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <!-- Join Date Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:padding="@dimen/stack_md">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تاريخ الانضمام"
+                        android:textSize="@dimen/text_label_mono"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginBottom="@dimen/unit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 يونيو 2023"
+                        android:textSize="@dimen/text_body_lg"
+                        android:textColor="@color/on_surface"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/nav_bg"
+        android:paddingLeft="@dimen/container_padding"
+        android:paddingRight="@dimen/container_padding">
+
+        <LinearLayout
+            android:id="@+id/tab_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/tab_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/tab_profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" />
+    </LinearLayout>
+</RelativeLayout>

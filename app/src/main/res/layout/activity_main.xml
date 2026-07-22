@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:screenOrientation="landscape">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.4" />
+
+    <!-- Background Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <!-- Top AppBar -->
+    <LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|end"
+        android:paddingLeft="@dimen/container_padding"
+        android:paddingRight="@dimen/container_padding"
+        android:paddingTop="@dimen/stack_sm"
+        android:paddingBottom="@dimen/stack_sm"
+        android:background="#1A000000"
+        android:layout_alignParentTop="true">
+
+        <!-- Logo and Title -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="@dimen/gutter">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="أريزون RP"
+                android:textSize="@dimen/text_display_md"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/stack_sm" />
+        </LinearLayout>
+
+        <!-- User Info -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/info_bg"
+            android:paddingLeft="@dimen/unit"
+            android:paddingRight="@dimen/unit"
+            android:paddingTop="@dimen/stack_sm"
+            android:paddingBottom="@dimen/stack_sm">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end"
+                android:layout_marginEnd="@dimen/unit">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="المستوى 42"
+                    android:textSize="@dimen/text_label_mono"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$1,240,500"
+                    android:textSize="@dimen/text_body_md"
+                    android:textColor="@color/on_surface"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Main Content -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
+        android:layout_above="@+id/bottom_nav"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingLeft="@dimen/container_padding"
+            android:paddingRight="@dimen/container_padding">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="هل أنت مستعد للشوارع؟"
+                android:textSize="@dimen/text_display_lg_mobile"
+                android:textColor="@color/on_surface"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginBottom="@dimen/stack_md" />
+
+            <!-- Enter Server Button -->
+            <Button
+                android:id="@+id/btn_enter_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="دخول السيرفر"
+                android:textSize="@dimen/text_headline_lg"
+                android:textColor="@color/on_primary"
+                android:textStyle="bold"
+                android:background="@drawable/btn_primary"
+                android:paddingLeft="@dimen/gutter"
+                android:paddingRight="@dimen/gutter"
+                android:paddingTop="@dimen/stack_sm"
+                android:paddingBottom="@dimen/stack_sm"
+                android:layout_marginBottom="@dimen/stack_md" />
+
+            <!-- Server Status Card -->
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="@dimen/stack_sm">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical|space_between"
+                    android:layout_marginBottom="@dimen/stack_sm">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:background="@drawable/status_dot"
+                            android:layout_marginEnd="@dimen/unit" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="متصل"
+                            android:textSize="@dimen/text_body_md"
+                            android:textColor="#4CAF50"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="حالة السيرفر"
+                        android:textSize="@dimen/text_label_mono"
+                        android:textColor="@color/on_surface_variant" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="842 / 1000 لاعب"
+                    android:textSize="@dimen/text_headline_lg"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="@dimen/unit" />
+
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:max="100"
+                    android:progress="84"
+                    android:progressDrawable="@drawable/progress_bar"
+                    android:layout_marginBottom="@dimen/stack_sm" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="صمم من طرف قناة xdiaa"
+                    android:textSize="@dimen/text_label_mono"
+                    android:textColor="@color/on_surface_variant"
+                    android:textAlignment="center"
+                    android:alpha="0.7" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/nav_bg"
+        android:paddingLeft="@dimen/container_padding"
+        android:paddingRight="@dimen/container_padding">
+
+        <!-- Settings Tab -->
+        <LinearLayout
+            android:id="@+id/tab_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" />
+
+        <!-- Home Tab -->
+        <LinearLayout
+            android:id="@+id/tab_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" />
+
+        <!-- Profile Tab -->
+        <LinearLayout
+            android:id="@+id/tab_profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" />
+    </LinearLayout>
+</RelativeLayout>

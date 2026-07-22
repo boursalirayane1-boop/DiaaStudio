@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:screenOrientation="landscape">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.4" />
+
+    <!-- Background Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingLeft="@dimen/container_padding"
+        android:paddingRight="@dimen/container_padding">
+
+        <!-- Logo Section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/section_gap">
+
+            <FrameLayout
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:gravity="center">
+
+                <!-- Glow Background -->
+                <View
+                    android:layout_width="420dp"
+                    android:layout_height="420dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/glow_circle"
+                    android:alpha="0.3" />
+
+                <!-- Logo -->
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter" />
+            </FrameLayout>
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ARIZON RP"
+                android:textSize="@dimen/text_display_lg"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="@dimen/stack_md" />
+        </LinearLayout>
+
+        <!-- Loading Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxWidth="800dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal">
+
+            <!-- Progress Info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/stack_sm">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="جاري تحميل موارد اللعبة... (2GB)"
+                        android:textSize="@dimen/text_label_mono"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/percent_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10%"
+                    android:textSize="@dimen/text_display_md"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/stack_md" />
+            </LinearLayout>
+
+            <!-- Progress Bar -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="@drawable/progress_bg"
+                android:layout_marginBottom="@dimen/stack_md">
+
+                <ProgressBar
+                    android:id="@+id/progress_bar_fill"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:max="100"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/progress_bar"
+                    android:indeterminate="false" />
+            </FrameLayout>
+
+            <!-- Tip Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/tip_bg"
+                android:padding="@dimen/stack_sm"
+                android:layout_marginTop="@dimen/unit">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تلميح: يمكنك استخدام مفتاح [K] لفتح قائمة السيارة"
+                    android:textSize="@dimen/text_body_md"
+                    android:textColor="@color/on_surface_variant"
+                    android:textStyle="italic" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="@dimen/container_padding"
+        android:alpha="0.5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="V.2.4.0-STABLE"
+            android:textSize="@dimen/text_label_mono"
+            android:textColor="@color/on_surface_variant"
+            android:letterSpacing="0.15" />
+    </LinearLayout>
+</RelativeLayout>
