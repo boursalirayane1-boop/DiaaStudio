@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="container_padding">32dp</dimen>
+    <dimen name="gutter">24dp</dimen>
+    <dimen name="stack_md">24dp</dimen>
+    <dimen name="stack_sm">12dp</dimen>
+    <dimen name="unit">8dp</dimen>
+    <dimen name="section_gap">64dp</dimen>
+    
+    <!-- Text Sizes -->
+    <dimen name="text_display_lg">48sp</dimen>
+    <dimen name="text_display_md">36sp</dimen>
+    <dimen name="text_display_lg_mobile">32sp</dimen>
+    <dimen name="text_headline_lg">28sp</dimen>
+    <dimen name="text_headline_sm">20sp</dimen>
+    <dimen name="text_body_lg">18sp</dimen>
+    <dimen name="text_body_md">16sp</dimen>
+    <dimen name="text_label_mono">14sp</dimen>
+</resources>
