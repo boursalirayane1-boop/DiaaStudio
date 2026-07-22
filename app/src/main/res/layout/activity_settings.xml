@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:screenOrientation="landscape">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.4" />
+
+    <!-- Background Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <!-- Top AppBar -->
+    <LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|space_between"
+        android:paddingLeft="@dimen/container_padding"
+        android:paddingRight="@dimen/container_padding"
+        android:paddingTop="@dimen/stack_sm"
+        android:paddingBottom="@dimen/stack_sm"
+        android:background="#1A000000"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="أريزون RP"
+                android:textSize="@dimen/text_display_md"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/stack_sm" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Main Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
+        android:layout_above="@+id/bottom_nav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/container_padding"
+            android:paddingRight="@dimen/container_padding"
+            android:paddingTop="@dimen/stack_md"
+            android:paddingBottom="@dimen/stack_md">
+
+            <!-- Settings Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="الإعدادات"
+                android:textSize="@dimen/text_headline_lg"
+                android:textColor="@color/on_surface"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/stack_md" />
+
+            <!-- Settings Grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="top"
+                android:layout_marginBottom="@dimen/stack_md">
+
+                <!-- Left Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/gutter">
+
+                    <!-- Sound Settings -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/card_bg"
+                        android:padding="@dimen/stack_md"
+                        android:layout_marginBottom="@dimen/stack_md">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="إعدادات الصوت"
+                            android:textSize="@dimen/text_headline_sm"
+                            android:textColor="@color/on_surface"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="@dimen/stack_md" />
+
+                        <!-- General Volume -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="@dimen/stack_md">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical|space_between"
+                                android:layout_marginBottom="@dimen/unit">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="حجم الصوت العام"
+                                    android:textSize="@dimen/text_body_md"
+                                    android:textColor="@color/on_surface_variant" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="85%"
+                                    android:textSize="@dimen/text_body_md"
+                                    android:textColor="@color/primary"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <SeekBar
+                                android:id="@+id/seek_general_volume"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:max="100"
+                                android:progress="85" />
+                        </LinearLayout>
+
+                        <!-- Music Volume -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="@dimen/stack_md">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical|space_between"
+                                android:layout_marginBottom="@dimen/unit">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="الموسيقى"
+                                    android:textSize="@dimen/text_body_md"
+                                    android:textColor="@color/on_surface_variant" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="40%"
+                                    android:textSize="@dimen/text_body_md"
+                                    android:textColor="@color/primary"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <SeekBar
+                                android:id="@+id/seek_music_volume"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:max="100"
+                                android:progress="40" />
+                        </LinearLayout>
+
+                        <!-- Radio Volume -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical|space_between"
+                                android:layout_marginBottom="@dimen/unit">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="الراديو"
+                                    android:textSize="@dimen/text_body_md"
+                                    android:textColor="@color/on_surface_variant" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="65%"
+                                    android:textSize="@dimen/text_body_md"
+                                    android:textColor="@color/primary"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <SeekBar
+                                android:id="@+id/seek_radio_volume"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:max="100"
+                                android:progress="65" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- App Settings -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/card_bg"
+                        android:padding="@dimen/stack_md">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="إعدادات التطبيق"
+                            android:textSize="@dimen/text_headline_sm"
+                            android:textColor="@color/on_surface"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="@dimen/stack_md" />
+
+                        <!-- Language Selection -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical|space_between"
+                            android:background="@drawable/input_bg"
+                            android:padding="@dimen/stack_sm"
+                            android:layout_marginBottom="@dimen/stack_md">
+
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/languages"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="اللغة المختارة"
+                                android:textSize="@dimen/text_body_md"
+                                android:textColor="@color/on_surface_variant" />
+                        </LinearLayout>
+
+                        <!-- Save Button -->
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="حفظ التغييرات"
+                            android:textColor="@color/on_primary"
+                            android:textStyle="bold"
+                            android:background="@drawable/btn_primary"
+                            android:padding="@dimen/stack_md" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Right Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- Control Settings -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/card_bg"
+                        android:padding="@dimen/stack_md">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="إعدادات أزرار التحكم"
+                            android:textSize="@dimen/text_headline_sm"
+                            android:textColor="@color/on_surface"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="@dimen/stack_md" />
+
+                        <!-- Old HUD Toggle -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical|space_between"
+                            android:background="@drawable/input_bg"
+                            android:padding="@dimen/stack_sm"
+                            android:layout_marginBottom="@dimen/stack_md">
+
+                            <ToggleButton
+                                android:layout_width="44dp"
+                                android:layout_height="24dp"
+                                android:textOff=""
+                                android:textOn="" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="هَد قديم"
+                                android:textSize="@dimen/text_body_md"
+                                android:textColor="@color/on_surface_variant" />
+                        </LinearLayout>
+
+                        <!-- Old Radar Toggle -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical|space_between"
+                            android:background="@drawable/input_bg"
+                            android:padding="@dimen/stack_sm">
+
+                            <ToggleButton
+                                android:layout_width="44dp"
+                                android:layout_height="24dp"
+                                android:textOff=""
+                                android:textOn="" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="رادار قديم"
+                                android:textSize="@dimen/text_body_md"
+                                android:textColor="@color/on_surface_variant" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/nav_bg"
+        android:paddingLeft="@dimen/container_padding"
+        android:paddingRight="@dimen/container_padding">
+
+        <LinearLayout
+            android:id="@+id/tab_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/tab_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/tab_profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" />
+    </LinearLayout>
+</RelativeLayout>
